@@ -1,0 +1,12 @@
+# This is an internal service to connect with mongo database
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+spec:
+  selector:
+    app: mongodb
+  ports:
+    - protocol: TCP
+      port: 27017 # Service Port
+      targetPort: 27017 # Container Port (pod)
