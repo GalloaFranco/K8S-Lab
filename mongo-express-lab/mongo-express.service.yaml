@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: mongo-express
+  # This is the correct type of service to expose some component outside K8S
   type: LoadBalancer
   ports:
     - protocol: TCP
