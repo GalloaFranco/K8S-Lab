@@ -1,0 +1,20 @@
+# into /etc/hosts we need to put: 192.168.49.2 go.com
+# The ip 192.168.49.2 is the result from minikube ip command
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: go-rest-api-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: go.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: go-rest-api-service
+                port:
+                  number: 8080
