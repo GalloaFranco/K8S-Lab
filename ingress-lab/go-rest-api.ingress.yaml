@@ -7,6 +7,10 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  tls:
+    - hosts:
+        - go.com
+    - secretName: go-rest-api-secret-tls
   rules:
     - host: go.com
       http:
