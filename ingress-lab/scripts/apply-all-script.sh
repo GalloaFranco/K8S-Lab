@@ -2,6 +2,7 @@
 
 cd ..
 
+kubectl apply -f go-rest-api-tls.secret.yaml
 kubectl apply -f go-rest-api.deployment.yaml
 kubectl apply -f go-rest-api.service.yaml
 kubectl apply -f go-rest-api.ingress.yaml
