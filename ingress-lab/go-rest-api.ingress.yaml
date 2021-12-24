@@ -9,6 +9,7 @@ metadata:
 spec:
   tls:
     - hosts:
+        # This domain would be added in /etc/hosts file matching with the minikube external ip, example 192.168.49.2 go.com
         - go.com
     - secretName: go-rest-api-secret-tls
   rules:
